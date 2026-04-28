@@ -2,17 +2,15 @@
 
 An interactive single-page data visualisation dashboard built with **Streamlit**, **Pandas**, **Matplotlib** and **Seaborn**. Two years of synthetic sales data across five product categories and four regions are explored through four complementary chart types and a sidebar of live filters.
 
-> Portfolio piece — Master's application in computational design.
-
 ---
 
 ## Project goals
 
 This project demonstrates three things:
 
-1. **Data wrangling fluency** — generation, cleaning, resampling, grouping, and derived metrics with Pandas.
-2. **Visualisation literacy** — matching chart type to question (trend → line, comparison → grouped bar, structure → heatmap, shape → violin) and styling them as a single visual system.
-3. **Interface clarity** — a small, restrained UI that updates instantly without ever feeling crowded.
+1. **Data wrangling fluency** , generation, cleaning, resampling, grouping, and derived metrics with Pandas.
+2. **Visualisation literacy** , matching chart type to question (trend → line, comparison → grouped bar, structure → heatmap, shape → violin) and styling them as a single visual system.
+3. **Interface clarity** , a small, restrained UI that updates instantly without ever feeling crowded.
 
 The aesthetic brief was *clean and editorial*: cream background, charcoal text, a single muted terracotta accent, generous whitespace, serif typography. Restraint is the design.
 
@@ -57,7 +55,7 @@ Streamlit ships with a built-in theme switcher. Open the menu in the top-right (
 ├── visualisations.py       # All chart functions (Matplotlib + Seaborn)
 ├── requirements.txt        # Pinned major versions
 ├── .streamlit/
-│   └── config.toml         # Theme — primary colour, fonts, backgrounds
+│   └── config.toml         # Theme , primary colour, fonts, backgrounds
 ├── screenshots/            # Static images used in this README
 ├── .gitignore
 └── README.md
@@ -71,7 +69,7 @@ The split is deliberate: `data_loader.py` and `visualisations.py` know nothing a
 
 **Streamlit over Dash.** Streamlit's caching decorator, native widget set, and minimal boilerplate make it the right tool for a single-page analytical UI. Dash gives more layout control but costs more code per feature, which doesn't pay back here.
 
-**Synthetic data, deterministic seed.** A fixed `numpy` seed (`42`) means anyone cloning the repo sees identical numbers. The generator builds in real structure — annual seasonality, weekly cycles, region-specific multipliers, noise — so the correlation heatmap shows non-trivial relationships and the violin plots have differentiated shapes.
+**Synthetic data, deterministic seed.** A fixed `numpy` seed (`42`) means anyone cloning the repo sees identical numbers. The generator builds in real structure , annual seasonality, weekly cycles, region-specific multipliers, noise , so the correlation heatmap shows non-trivial relationships and the violin plots have differentiated shapes.
 
 **Matplotlib + Seaborn, not Plotly.** The brief asked for the former, but the choice is also defensible: Matplotlib's static output is faster to render, easier to style consistently, and produces cleaner exports for the README. Seaborn handles the statistical primitives (violin, heatmap) with less code than raw Matplotlib.
 
@@ -87,10 +85,10 @@ The split is deliberate: `data_loader.py` and `visualisations.py` know nothing a
 
 The sidebar has four controls:
 
-- **Date range slider** — filters by month/year using Streamlit's native datetime slider.
-- **Categories** — multi-select (defaults to all five).
-- **Regions** — multi-select (defaults to all four).
-- **Primary metric** — switches the line, bar, and violin charts between revenue, units sold, customers, and average order value.
+- **Date range slider** , filters by month/year using Streamlit's native datetime slider.
+- **Categories** , multi-select (defaults to all five).
+- **Regions** , multi-select (defaults to all four).
+- **Primary metric** , switches the line, bar, and violin charts between revenue, units sold, customers, and average order value.
 
 The four metric cards at the top (total revenue, average daily revenue, peak day, total units) all recompute on every filter change. If a filter combination produces an empty dataset, the app surfaces a warning and skips chart rendering rather than crashing.
 
@@ -100,7 +98,7 @@ A collapsible *Inspect filtered data* panel at the bottom shows the first 500 ro
 
 ## Possible extensions
 
-- Replace the synthetic generator with a real CSV loader — only `data_loader.load_data()` needs to change.
+- Replace the synthetic generator with a real CSV loader , only `data_loader.load_data()` needs to change.
 - Add a forecast overlay to the time series (statsmodels' `SARIMAX` or Prophet).
 - Export the current view to PDF via Matplotlib's multi-page backend.
 - Migrate to Dash if multi-page navigation or finer-grained callback control becomes needed.
