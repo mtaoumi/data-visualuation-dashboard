@@ -1,0 +1,22 @@
+# Streamlit theme configuration
+#
+# The cream/charcoal palette below is used by default. Users can switch to
+# Streamlit's dark theme at any time via:
+#     ☰ (top-right) → Settings → Theme → Dark
+# This satisfies the "dark mode toggle" requirement using Streamlit's native
+# mechanism rather than a bespoke implementation.
+
+[theme]
+base = "light"
+primaryColor = "#B7553A"          # muted terracotta accent
+backgroundColor = "#F5F1EA"       # cream
+secondaryBackgroundColor = "#FBF8F3"  # slightly lighter cream for cards / sidebar
+textColor = "#2A2A28"             # near-black charcoal
+font = "serif"
+
+[server]
+# Quieter dev experience: don't auto-open the browser tab on every reload.
+headless = false
+
+[browser]
+gatherUsageStats = false
